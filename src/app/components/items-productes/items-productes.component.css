@@ -1,0 +1,21 @@
+.card{
+    margin-bottom: 30px;
+}
+.btn{
+    background-color: #D19C97;
+    color: antiquewhite;
+}
+p{
+    color: peru;
+
+}
+h5{
+    color: rgb(207, 45, 5);
+}
+.btn:hover{
+
+    background-color: rgb(179, 121, 164);
+}
+img{
+    height: 200px;
+}

@@ -1,0 +1,65 @@
+<div class="container  m-5">
+<form class="row g-3 needs-validation "
+[formGroup]="productform"
+(submit)="formOperation($event)">
+    <div class="col-12">
+      <label for="validationCustom01" class="form-label">Name product</label>
+      <input 
+      type="text"
+      class="form-control" 
+      id="validationCustom01" 
+      formControlName="name"
+      placeholder="Enter product Name"
+      
+      >
+    <ng-container *ngIf="getname.touched">
+      <div *ngIf="getname.hasError('required')" class="text-danger">
+        <p> Name is required</p>
+       </div>
+       <div *ngIf="getname.hasError('minlength')" class="text-danger">
+         <p> lenght must be more3</p>
+        </div>
+    </ng-container>
+    </div>
+    <div class="col-12">
+      <label for="validationCustom02" class="form-label">Price Product</label>
+      <input 
+      type="number" 
+      class="form-control" 
+      id="validationCustom02" 
+      formControlName="price"
+      placeholder="Enter product price"
+     >
+     <ng-container *ngIf="getprice.touched">
+      <div *ngIf="getprice.hasError('required')" class="text-danger">
+        <p> Price is required</p>
+       </div>
+       <div *ngIf="getprice.hasError('min')" class="text-danger">
+         <p> peice must more 50$</p>
+        </div>
+    </ng-container>
+    </div>
+    <div class="col-12">
+        <label for="validationCustom02" class="form-label">Quantity Product</label>
+        <input 
+        type="number" 
+        class="form-control" 
+        id="validationCustom02" 
+        formControlName="Quantity"
+        placeholder="Enter product Quantity"
+         
+       >
+       <ng-container *ngIf="getquantity.touched">
+        <div *ngIf="getquantity.hasError('required')" class="text-danger">
+          <p> quantity is required</p>
+         </div>
+         <div *ngIf="getquantity.hasError('min')" class="text-danger">
+           <p> quantity must more 1 item</p>
+          </div>
+      </ng-container>
+      </div>
+   
+    <div class="col-12">
+      <button class="btn bg-danger" type="submit" >{{productid== 0 ? "Add New Product" : "Edit Product" }}</button>
+    </div>
+  </form></div>

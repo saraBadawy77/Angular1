@@ -1,0 +1,25 @@
+<div>
+<div class="card" >
+    <img src= "{{mypro.img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{mypro.title}}</h5>
+      <p >{{mypro.price}}</p>
+      <p class="card-text"> </p>
+      <p class="card-text">{{mypro.description}}</p>
+      <div  [ngSwitch]="mypro.qu" class="mb-2"> 
+<p *ngSwitchCase="0" class=" card-text text-danger ">Not available now..</p>
+<p *ngSwitchCase="1" class="card-text text-warning">last piece!! </p>
+<p *ngSwitchDefault class=" card-text text-success">  Quantity: {{mypro.qu}}</p>
+      </div>
+      
+      <a href="#"  class="btn"
+      [ngClass]="{'bg-danger':mypro.qu==0,
+      'bg-warning':mypro.qu==1,
+      'bg-success':mypro.qu >1
+    }"
+      >
+      {{ mypro.qu==0?"Sold":"Buy Now"}}</a>
+    </div>
+  </div>
+
+</div>

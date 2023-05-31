@@ -1,0 +1,9 @@
+.fot{
+    background-color: rgb(243, 242, 242);
+}
+button{
+    background-color:#D19C97;
+}
+button:hover{
+    border:1px solid #D19C97;
+}
